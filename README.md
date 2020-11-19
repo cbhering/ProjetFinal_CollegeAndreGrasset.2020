@@ -4,8 +4,7 @@ Virtual open house ("Portes Ouvertes") web application developed for Institut Gr
 
 ## Developers
 
-Aurélia Fortune, Conrado Ribeiro de Freitas Bhering, Herminie Philippe, Hichem Seddiki, Juan Pawlo Fernando Sierra Arias, Lowen Dominique Mistoul Ntchorere	and
-Yenni Hasbleidy Galindo Santiago	
+Aurélia Fortune, Conrado Ribeiro de Freitas Bhering, Elizabeth Marquez Medina, Herminie Philippe, Hichem Seddiki, Juan Pawlo Fernando Sierra Arias, Lowen Dominique Mistoul Ntchorere	and Yenni Hasbleidy Galindo Santiago	
 
 ## Front-end
 
