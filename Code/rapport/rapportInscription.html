@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <title> Accueil Rapports</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript">
+        var datefield = document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type != "date") {
+            document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+        }
+    </script>
+
+    <script>
+        if (datefield.type != "date") {
+            jQuery(function ($) {
+                $('#debut').datepicker();
+                $('#debut').attr("readonly", true);
+                $('#fin').datepicker();
+                $('#fin').attr("readonly", true);
+            })
+        }
+    </script>
+
+    <script type="text/javascript">
+        function add_insc(line) {
+            document.getElementById("tab").innerHTML += "<td>" + line + "</td>";
+        }
+    </script>
+        <script type="text/javascript">function disapear(){
+        document.getElementById("frm").style.display="none";
+    }
+    </script>
+
+    <script type="text/javascript">function validate() {
+            var dddDebut = document.forms["monForm"]["debut"].value;
+            var ddDebut = new Date(dddDebut);
+            var dddFin = document.forms["monForm"]["fin"].value;
+            var ddFin = new Date(dddFin);
+            if (datefield.type != "date") {
+                var yeard = dddDebut.slice(6, 10);
+                var dayd = dddDebut.slice(3, 5);
+                var monthd = dddDebut.slice(0, 2);
+
+                var yearf = dddFin.slice(6, 10);
+                var dayf = dddFin.slice(3, 5);
+                var monthf = dddFin.slice(0, 2);
+
+                document.forms["monForm"]["debut"].value = yeard + "-" + monthd + "-" + dayd;
+                document.forms["monForm"]["fin"].value = yearf + "-" + monthf + "-" + dayf;
+
+            }
+
+            if (ddDebut.getTime() >= ddFin.getTime()) {
+                alert("Dates invalides (la date de début est supérieure ou égale à la date de fin)");
+                var yeard = dddDebut.slice(6, 10);
+                var dayd = dddDebut.slice(3, 5);
+                var monthd = dddDebut.slice(0, 2);
+
+                var yearf = dddFin.slice(6, 10);
+                var dayf = dddFin.slice(3, 5);
+                var monthf = dddFin.slice(0, 2);
+
+                document.forms["monForm"]["debut"].value = "M-DD-YY-Y-";
+                document.forms["monForm"]["fin"].value = "M-DD-YY-Y-";
+
+                return false;
+            } else {
+                return true;
+            }
+        }</script>
+</head>
+
+
+<body>
+
+    <body>
+
+        <div class="container" id="shadow" style="padding:0; background-color: #162b65; border: 1px solid white;">
+            <div class="row" style="border-right: 1px solid white; border-bottom: 1px solid white;">
+                <div class="col-2">
+                    <div style="border-left: 1px solid white;">
+                        <img src="./images/logo_blanc.png" alt="Logo" style="padding-left: 7px;height: 70px;">
+                    </div>
+                </div>
+                <div class="col-10">
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="container" id="shadow" style="background-color: #162b65; border: 1px solid white;">
+            <div class="row">
+                <div class="col" style="text-align: center; padding-top: 5px;">
+                    <h2 class="w700 blanc">RAPPORTS SUR LES INSCRIPTIONS</h2>
+                </div>
+            </div>
+            <div class="row" style="height:5px; background-color: white;"></div>
+        </div>
+    
+        <div class="container" id="shadow" style="border: 1px solid white;" s>
+            
+            <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col">
+                        <center>
+
+    <form name="monForm" method="Post" action="myaction" onsubmit="return validate()">
+        <h3> Sélectionnez des dates</h3>
+        <br>
+        <br>
+        <label for="debut">Début</label>
+        <br>
+        <input id="debut" type="date" name="debut" value="YYYY-MM-DD" required><br><br>
+
+        <label for="fin">Fin</label>
+        <br>
+        <input id="fin" type="date" name="fin" value="YYYY-MM-DD" required><br><br>
+<br>
+        <input class="bouton-rouge-small blanc" style=" width: 15%; padding-bottom: 15px;"  type="submit" value="Valider">
+        <p id="rp"></p>
+        <table id="tab">
+
+        </table>
+    </form>
+</center>
+</div>
+</div>
+<div class="col" style="padding:10px; border-bottom: 0;">
+
+
+<a href="http://jpo-rapport.institutgrassetinfo.com:4012/">
+    <h5 id="acc" class="w300" style="color: #162b65; text-align: right;"><br>Revenir à la page d'accueil du site
+    </h5>
+</a>
+
+</div>
+</div>
+</body>
+
+</html>

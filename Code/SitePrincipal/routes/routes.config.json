@@ -1,0 +1,50 @@
+{
+    "routes":
+    [
+        {
+            "uri" : "/PortesOuvertsConfig/login",
+            "handler"  : "./routes/PortesOuvertsConfig/login/login"
+        },
+        {
+            "uri" : "/PortesOuvertsConfig/forgetuser",
+            "handler"  : "./routes/PortesOuvertsConfig/login/forgetuser"
+        },
+        {
+            "uri" : "/PortesOuvertsConfig/changerpwd",
+            "handler"  : "./routes/PortesOuvertsConfig/login/changerpwd"
+        },
+        {
+            "uri" : "/PortesOuverts/conference",
+            "handler"  : "./routes/PortesOuverts/conferences/conference"
+        },
+        {
+            "uri" : "/PortesOuvertsConfig/configuration",
+            "handler"  : "./routes/PortesOuvertsConfig/configuration/configuration"
+        },
+        {
+            "uri" : "/PortesOuverts/loginpublic",
+            "handler"  : "./routes/PortesOuverts/loginpublic/loginpublic"
+        },
+        {
+            "uri" : "/PortesOuverts/accueil",
+            "handler"  : "./routes/accueil/accueil"
+        },
+        {
+            "uri" : "/PortesOuverts/chat",
+            "handler"  : "./routes/PortesOuverts/chat/chat"
+        },
+        {
+            "uri" : "/PortesOuverts/brochures",
+            "handler"  : "./routes/PortesOuverts/brochures/brochures"
+        },
+        {
+            "uri" : "/PortesOuvertsConfig/rapportInscription",
+            "handler"  : "./routes/PortesOuvertsConfig/reports/reports"
+        },
+        {
+            "uri" : "/PortesOuvertsConfig/rapportProgramme",
+            "handler"  : "./routes/PortesOuvertsConfig/reports/reports"
+        }
+        
+    ]
+}

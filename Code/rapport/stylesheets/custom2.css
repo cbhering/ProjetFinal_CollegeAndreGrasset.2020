@@ -1,0 +1,219 @@
+ /*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+ 
+/* 
+ici pas de media queriy parce que Bootstrap est mobile first
+*/
+h1 {font-size:2.5rem;}
+h2 {font-size: 2rem;}
+h3{font-size: 1,5rem;}
+h4{font-size: 1.2rem;}
+h5 {font-size: .8rem;}
+h6{font-size: 0.5rem;}
+p{font-size: 0.9rem;}
+
+
+
+@media (min-width: 544px) {  
+  h1 {font-size:2.5rem;}
+  h2 {font-size: 2rem;}
+  h3{font-size: 1,5rem;}
+  h4{font-size: 1.2rem;}
+  h5 {font-size: 1rem;}
+  h6{font-size: 0.5rem;}
+  p{font-size: 0.9rem;}
+
+}
+ 
+@media (min-width: 768px) {  
+  h1 {font-size:2.5rem;}
+  h2 {font-size: 2rem;}
+  h3{font-size: 1,5rem;}
+  h4{font-size: 1.2rem;}
+  h5 {font-size: 1rem;}
+  h6{font-size: 0.6rem;}
+  p{font-size: 1rem;}
+  .bouton-rouge{width: 40%;}
+
+}
+ 
+@media (min-width: 992px) { 
+  h1 {font-size:3rem;}
+  h2{font-size: 2.5rem;}
+  h5{font-size: 1rem;}
+  
+}
+ 
+@media (min-width: 1200px) {  
+  h1 {font-size:3.5rem;}
+  h2{font-size: 3rem;}
+  h3{font-size: 2.5rem;}
+  h4{font-size: 2rem;}
+  h5{font-size: 1.3rem;}
+  h6{font-size: 0.7rem;}
+  p{font-size: 1rem;}
+  .bouton-rouge{width: 28%;}
+  .bouton-rouge-small{width: 60%;}
+}
+ 
+
+
+@font-face {
+   font-family: gotham;
+   font-weight: 500;
+   src: url("Gotham-Medium.otf") format("opentype");
+
+ }
+
+ @font-face {
+   font-family: gotham;
+   font-weight: 300;
+   src: url("Gotham-Light.otf") format("opentype");
+
+ }
+
+ @font-face {
+   font-family: gotham;
+   font-weight: 700;
+   src: url("Gotham-Bold.otf") format("opentype");
+
+ }
+
+*{
+   font-family: 'gotham';
+ }
+
+ .w300 {
+   font-weight: 300;
+ }
+
+ .w500 {
+   font-weight: 500;
+ }
+
+ .w700 {
+   font-weight: 700;
+ }
+
+ .blanc{
+   color: white;
+ }
+
+ .nav-link {
+   color: white;
+   text-decoration: none;
+   background-color: #162b65;
+   border: 1px solid white;
+   font-weight: 300;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ .nav-link.active {
+  background-image: repeating-linear-gradient(135deg,crimson, red 15%);
+  color: white;
+ }
+
+ a {
+   text-decoration: underline;
+ }
+ a.active {
+  color: crimson;
+}
+a:hover {
+  color: crimson;
+}
+/* 
+a.bouton-rouge{
+  text-decoration: none !important;
+}
+a.bouton-rouge-small{
+  text-decoration: none !important;
+} */
+ h1 {
+  font-weight: 700;
+  color: #162b65; 
+}
+
+ h2 {
+   font-weight: 700;
+   color: #162b65; 
+ }
+
+h3{
+  font-weight: 700;
+  color: #162b65; 
+}
+
+/*h4 sert pour les sous-titres*/
+h4{
+  font-weight: 500;
+  color: crimson; 
+}
+
+/* h5 sert pour texte et lien de la page index*/
+ h5 {
+   font-weight: 300;
+   color: #162b65; 
+ }
+ 
+
+ h6{
+  font-weight: 300;
+  color: #162b65; 
+ }
+ p{
+  font-weight: 300;
+  color: #162b65; 
+ }
+
+ #shadow {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #bouton {
+   background-color: #162b65;
+   color: white;
+ }
+
+ .bouton-rouge {
+  background-image: repeating-linear-gradient(135deg,crimson, red 12%);
+  border: 0;
+  border-radius: 8px;
+  padding-top: 16px;
+  text-decoration: none !important;
+ }
+
+ .bouton-rouge:hover{
+  background-image: repeating-linear-gradient(135deg,red,crimson 6%);
+  text-decoration: none !important;
+ }
+
+ .bouton-rouge-small{
+  background-image: repeating-linear-gradient(135deg,crimson, red 12%);
+  border: 0;
+  border-radius: 8px;
+  padding-top: 16px;
+  text-decoration: none !important;
+
+ }
+
+ .bouton-rouge-small:hover{
+  background-image: repeating-linear-gradient(135deg,red,crimson 6%);
+  text-decoration: none !important;
+ }
+
+ .btn{
+  text-decoration: none !important;
+ }
+ .btn:hover{
+  text-decoration: none !important;
+ }
+ .button{
+  text-decoration: none !important;
+ }
+ .button:hover{
+  text-decoration: none !important;
+ }

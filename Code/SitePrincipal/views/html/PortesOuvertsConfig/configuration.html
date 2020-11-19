@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+	<title>Portes Ouvertes Institut Grasset - Configuration</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom2.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/datatables.min.css" type="text/css">
+	<link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery-ui.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/datatables.min.js"></script>
+	<script src="/js/dataTables.select.min.js"></script>
+	<script src="/js/configuration.js"></script>	
+	<script src="/js/validatorconfiguration.js"></script>
+	
+  </head>
+  <style>
+
+	  a{
+		  background-color: #162b65;
+	  }
+	  .btn{
+
+		background-color: #162b65;
+	  }
+
+	  .btn:hover{
+		background-image: repeating-linear-gradient(135deg,crimson, red 15%);
+		border: 0;
+	  }
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+    cursor: text;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    padding: .5em 1em;
+    text-decoration: none;
+}
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: #fff;
+	text-decoration: none;
+	background-image: repeating-linear-gradient(135deg,crimson, red 15%);
+	border:0;
+}
+.ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited, .ui-state-focus a, .ui-state-focus a:hover, .ui-state-focus a:link, .ui-state-focus a:visited, a.ui-button:hover, a.ui-button:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
+    color: #ffffff;
+    text-decoration: none;
+}
+.ui-widget-header a {
+    color: #333;
+}
+.ui-widget-content a {
+    color: #333;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+* {
+    font-family: 'gotham';
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    margin: 1px .2em 0 0;
+    border-bottom-width: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+	
+	  #overlay{	
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.6);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% { 
+		transform: rotate(360deg); 
+	}
+}
+.is-hide{
+	display:none;
+}
+  </style>
+  <body>
+
+	<!-- <div class="container" id="shadow" style="padding-left: 7; background-color: #162b65; border: 1px solid white; ">
+        <img src="./images/logo_blanc.png" alt="Logo" style="height: 70px;">
+    </div> -->
+
+	<div class="container" id="shadow" style="padding:0; background-color: #162b65; border: 1px solid white;">
+        <div class="row" style="border-right: 1px solid white; border-bottom: 1px solid white;">
+            <div class="col-2">
+				<div style="border-left: 1px solid white;">
+					<a href="https://www.institut-grasset.qc.ca" target="_blank">
+                    <img src="/images/logo_blanc.png" alt="Logo" style="padding-left: 7px;height: 70px;">
+				</a>
+				</div>
+            </div>
+            <div class="col-8">
+            </div>
+            <div class="col-2" style="text-align: right; padding-right: 18px;"" >
+                <a href="/"> <p class="blanc">Retour accueil</p>
+                    </a>
+            </div>
+		</div>
+	</div>
+
+    <div class="container" id="shadow" style="background-color: #162b65; border: 1px solid white;">
+        <div class="row">
+            <div class="col" style="text-align: center; padding-top: 5px;">
+                <h2 class="w700 blanc">ADMINISTRATION DU SITE</h2>
+            </div>
+        </div>
+        <div class="row" style="height:5px; background-color: white;"></div>
+    </div>
+	
+
+ 	<div class="container" id="shadow" style="border: 1px solid white; padding-top: 20px;">
+		<div id="tabs" style="border: black;" >
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item active" role="tab">
+					<a  href="#tab1" >Configuration générale</a>
+				</li>
+
+				<li class="nav-item active">
+					<a  href="#tab2" role="tab">Gestion des journées portes ouvertes </a>
+					
+				</li>
+				<li class="nav-item active">
+					<a  href="#tab3" role="tab">Gestion des conférenciers et des clavardeurs</a>
+				</li>
+				<li class="nav-item ">
+					<a  href="#tab4" role="tab">Gestion des conférences</a>
+				</li>
+				<li class="nav-item ">
+					<a  href="#tab5" role="tab">Gestion des brochures</a>
+				</li>
+				<li class="nav-item ">
+					<a  href="#tab6" role="tab">Rapports</a>
+				</li>
+				<!--<li class="nav-item ">
+					<a  href="#tab7" role="tab">Rapport programmes</a>
+				</li> -->
+			</ul>
+			<div>
+				<div class="tab-pane active" id="tab1">
+					<form role="formGeneral" class="bootstrap-form" id="general">
+						<hr>
+						<label for="inputMessage">
+							<h4>Générale</h4>
+						</label><br/>
+						<div class="form-group">							 
+						<label for="inputVirtualVisit">
+								Lien visite virtuelle
+							</label>
+							<input type="text" class="form-control" name="virtualVisit" required required  maxlength="2">
+						</div>
+						<div class="form-group">
+							<label for="inputFAQ">
+								Lien FAQ
+							</label>
+							<input type="text" class="form-control" name="faq" required maxlength="255">
+						</div>
+						
+						<hr>
+						<label for="inputMessage">
+							<h4>Page d'accueil</h4>
+						</label><br/>
+						<div class="form-group">
+							<label for="inputMessage">
+								Titre de bienvenu
+							</label>
+							<input type="text" class="form-control" name="welcomeTitle" form="usrform">
+							<label for="inputMessage">
+								Sous titre de bienvenu
+							</label>
+							<input type="text" class="form-control" name="welcomeSubTitle" form="usrform">
+							<label for="inputMessage">
+								Message de bienvenu 1
+							</label>
+							<!--	<input type="text" class="form-control" name="message" form="usrform">-->
+							<textarea id="welcomeText" class="form-control" name="welcomeText" rows="10" cols="30" maxlength="500" required="yes"></textarea>
+							<div class="form-group">
+								<label for="video1">
+									Lien video 1
+								</label>
+								<input type="text" class="form-control" name="video1" required maxlength="255">
+							</div>
+							<label for="inputMessage">
+								Message de bienvenu 2
+							</label>
+							<textarea id="welcomeText2" class="form-control" name="welcomeText2" rows="10" cols="30" required maxlength="500" required="yes"></textarea>	
+							<div class="form-group">
+								<label for="video2">
+									Message de bienvenu 3
+								</label>
+								<textarea id="welcomeText3" class="form-control" name="welcomeText3" rows="10" cols="30" required maxlength="500" required="yes"></textarea>	
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary" name="saveGeneral">
+							Enregistrer
+						</button>
+					</form>
+				</div>
+			
+				<div class="tab-pane" id="tab2">
+					<p>Gestion des journées portes ouvertes</p>
+					<table class="table table-bordered" id="eventList"  style="width: 100%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Date de début</th>
+								<th>Nom</th>								
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventModal" name="addEvent">Ajouter</button>
+					<button type="button" class="btn btn-primary" name="removeEvent">Effacer</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventModal" name="updateEvent">Mettre à jour</button>
+
+					<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Événement</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body">
+								<form role="form" enctype="multipart/form-data" id="eventForm">
+									<div class="form-group" >
+										<label for="descriptionEvent">Nom de l'événement</label>
+										<input type="text" class="form-control" name="name" id="nameEvent">
+									</div>
+							
+									<div class="form-group">
+										Date de début: <input type="date" name="dateInitial" id="dateEvent" value="2020-11-02">
+									</div>
+									
+								</form>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							  <button type="button" class="btn btn-primary" name="saveEvent">Enregistrer/Mettre à jour</button>
+							</div>
+						  </div>
+						</div>
+					  </div>		
+			</div>
+
+				<div class="tab-pane" id="tab3">
+					<p>Gestion des conférenciers et des clavardeurs</p>
+					<table class="table table-bordered" id="speakerList"  style="width: 100%;">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Image</th>
+								<th>Nom</th>
+								<th>Description</th>
+								<th>Clavardage</th>
+								<th>Lien clavardage</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#speakerModal" name="addSpeaker">Ajouter</button>
+					<button type="button" class="btn btn-primary" name="removeSpeaker">Effacer</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#speakerModal" name="updateSpeaker">Mettre à jour</button>
+
+					<div class="modal fade" id="speakerModal" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Gestion des conférenciers et des clavardeurs</h5>
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							  </button>
+							</div>
+							<div class="modal-body">
+								<form role="form" enctype="multipart/form-data" id="speakerForm">
+									<div class="form-group">
+										<label for="inputNom">Nom</label>
+										<input type="text" class="form-control" name="speakerName">
+									</div>
+									<div class="form-group"> 
+										<label for="inputDescription">Description</label>
+										<input type="text" class="form-control" name="speakerDescription">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputFile">Image</label>
+										<input type="file" class="form-control-file" id="inputFile">
+										<p class="help-block">Ajouter l'image.</p>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputFile">Clavardage</label>
+										<input type="checkbox" id="chat" name="chat">
+										<input type="text" class="form-control" name="linkchat">										
+									</div>					
+								</form>
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							  <button type="button" class="btn btn-primary" name="saveSpeaker">Enregistrer</button>
+							</div>
+						  </div>
+						</div>
+					  </div>		
+			</div>
+			<div class="tab-pane" id="tab4">
+				<p>Gestion des conferences</p>
+				<table class="table table-bordered" id="conferenceList"  style="width: 100%;">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Nom de la conference</th>
+							<th>Heure initial </th>
+							<th>Heure final: </th>
+							<th>Conférencier </th>
+							<th >Lien de la conference</th>
+							<th>speakerid</th>
+							<th>eventid</th>									
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#conferenceModal" name="addConference">Ajouter</button>
+				<button type="button" class="btn btn-primary" name="removeConference">Effacer</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#conferenceModal" name="updateConference">Mettre à jour</button>
+				<div class="modal fade" id="conferenceModal" tabindex="-1" role="dialog" aria-labelledby="conferenceModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel">Conférences</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-body">
+								<form role="form" enctype="multipart/form-data" id="conferenceForm">
+									<div class="form-group">
+										<label >Événement</label>
+										<select  id="idEventConference" name="idEventConference"></select>
+									</div>
+								<div class="form-group">
+									<label for="inputNom">Nom de la conference</label>
+									<input type="text" class="form-control" name="conferenceName" id="conferenceName">
+								</div>
+								<div class="form-group">
+										Heure initial: <input type="time" name="commence" id="commence" value="09:00">
+										Heure final: <input type="time" name="end" id="end" value="09:00">
+								</div>
+								<div class="form-group">
+									<label >Conférencier</label>
+									<select id="idSpeaker" ></select>
+									
+								</div>
+								<div class="form-group">
+									<label for="inputNom">Lien de la conference</label>
+									<input type="text" class="form-control" name="linkConference" id="linkConference">
+								</div>								
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							  <button type="button" class="btn btn-primary" name="saveConference">Enregistrer/Mettre à jour</button>
+							</div>
+						  </div>
+						</div>
+					  </div>		
+			</div>
+			
+			<div class="tab-pane" id="tab5">
+				<p>Gestion des brochures</p>
+				<table class="table table-bordered" id="fileList"  style="width: 100%;">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Image</th>
+							<th>Document</th>
+							<th>Description</th>							
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fileModal" name="addFile">Ajouter</button>
+				<button type="button" class="btn btn-primary" name="removeFiles">Effacer</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fileModal" name="updateFile">Mettre à jour</button>
+				
+
+				<div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel">Gestion des brochures</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-body">
+							<form role="form" enctype="multipart/form-data" id="downForm" name="downForm">
+								<div class="form-group"> 
+									<label for="inputDescription">Description</label>
+									<input type="text" class="form-control" name="fileDescription">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputFile">Document</label>
+									<input type="file" class="form-control-file" id="inputFileDocument" name="inputFileDocument" accept=".pdf">
+									<p class="help-block">Ajouter le document.</p>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputFile">Image</label>
+									<input type="file" class="form-control-file" id="inputFileImage" name="inputFileImage" accept="image/*">
+									<p class="help-block">Ajouter l'image.</p>
+								</div>					
+							</form>
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						  <button type="button" class="btn btn-primary" name="saveFile">Enregistrer/Mettre à jour</button>
+						</div>
+					  </div>
+					</div>
+				  </div>		
+		
+		
+		
+				</div>		
+		
+			<div class="tab-pane" id="tab6">
+				<p>Rapports </p>
+				<div class="form-group">
+					
+					<a href="http://jpo-rapport.institutgrassetinfo.com" class="btn">
+						<p class="blanc"><strong>Aller au site de rapports</strong></p>
+					  </a>
+				</div>
+			
+			 
+		 </div>
+
+		<div id="successAlert" class="alert alert-success collapse" role="alert">Les informations ont été enregistrées</div>
+		<div id="errorAlert" class="alert alert-danger alert-dismissible collapse" role="alert" >
+			<strong>Error!</strong> <span id="errorMesssge"></span>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div>
+	<div id="overlay">
+		<div class="cv-spinner">
+			<span class="spinner"></span>
+		</div>
+	</div>
+  </body>
+</html>

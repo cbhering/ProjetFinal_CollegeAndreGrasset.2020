@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <title>Chat-Portes Ouvertes Institut Grasset</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS SANS CDN-->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <!-- Override de Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/css/custom2.css">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/accueil.js"></script>
+    <script src="/js/chat.js"></script>
+    
+          <!--End of Tawk.to Script -->
+</head>
+
+<body>
+
+
+    <div class="container" id="shadow" style="padding:0;">
+
+        <div class="container" style="padding:0; background-color: #162b65; border: 1px solid white; ">
+            <div class="row" style="padding:0; ">
+                <div class="col-2"><a href="https://www.institut-grasset.qc.ca" target="_blank">
+                    <img alt="Logo" style="padding-left: 7px; height: 60px;"
+                        src="/images/IGR_Logo_CMYK_Horiz-Sign_blanc.png"></a>
+                </div>
+                <div class="col-7">
+                </div>
+                <div class="col-3" style="text-align: right; ">
+                    <h6><a class="blanc" href=" /PortesOuvertsConfig/login.html">configuration</a>&nbsp</h6>
+                </div>
+            </div>
+        </div>
+
+        <nav style="padding-left:0;" class="nav nav-pills-notstyle flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center nav-link" href="/PortesOuverts/accueil.html">ACCUEIL</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="/PortesOuverts/conference.html">PROGRAMME DE LA JOURNÉE</a>
+            <a class="flex-sm-fill text-sm-center nav-link active" href="/PortesOuverts/chat.html">CLAVARDER</a>
+            <a id="visitevirtuelle" class="flex-sm-fill text-sm-center nav-link" href="visiter.html"
+                target="_blank">VISITE VIRTUELLE</a>
+            <a id="faq" class="flex-sm-fill text-sm-center nav-link" href="faq.html" target="_blank">FOIRE AUX
+                QUESTIONS</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="/PortesOuverts/brochures.html">BROCHURES</a>
+        </nav>
+
+        <div class="container" style="padding:0; border-left:1px solid white;border-right:1px solid white;">
+            <div class="row" style="padding-top: 30px; padding-left: 15px;">
+
+                <div class="col">
+                    <h3>Choisis l’intervenant de l’Institut Grasset avec qui tu souhaites discuter par clavardage. </h3>
+                    <h5>Une fenêtre de discussion s’ouvrira et tu pourras poser tes questions entièrement en privé.</h5>
+                    <br>
+                </div>
+            </div>
+        </div>        
+        <div class="container" style="padding:0; border-left:1px solid white;border-right:1px solid white;" id="cardsContainer"></div>
+            <div class="container" style="padding:0; background-color: #162b65;">
+                <div class="row" style="height: 80px;">
+                </div>
+            </div>
+            <div class="container"
+                style="padding:0;background-image: repeating-linear-gradient(135deg,crimson, red 15%);">
+                <div class="row" style="height: 10px;">
+                </div>
+            </div>
+        </div>
+      <!-- Start of Tawk.to Script-->
+      <script type="text/javascript"> 
+        var urlRaw= window.location.href;
+        console.log(urlRaw);
+        var urlClean = new URL(urlRaw);
+        let link = urlClean.searchParams.get("linkchat");//.slice(1, -1);
+        console.log(link);
+        console.log(link);
+        
+        
+          var Tawk_API=Tawk_API||{},  Tawk_LoadStart=new Date();
+          Tawk_API.onLoad = function(){
+                Tawk_API.maximize();
+            };
+          (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src=link;
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+          })();
+      </script>
+
+</body>
+</html>
